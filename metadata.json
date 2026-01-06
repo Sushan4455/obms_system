@@ -1,0 +1,7 @@
+{
+  "name": "LekhaCloud Nepal",
+  "description": "A comprehensive cloud-based accounting and business management system specifically designed for Nepali SMEs, featuring VAT compliance, TDS tracking, and double-entry bookkeeping.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
