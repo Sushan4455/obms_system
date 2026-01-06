@@ -1,5 +1,5 @@
 
-import { AccountType, Transaction, Invoice, Contact, Purchase, AppSettings, Account, Staff, Attendance, WorkLog } from './types';
+import { AccountType, Transaction, Invoice, Contact, Purchase, AppSettings, Account, Staff, Attendance, WorkLog, Product, WebsiteConfig } from './types';
 
 export const VAT_RATE = 0.13;
 export const FISCAL_YEAR_START = 'Shrawan';
@@ -126,3 +126,71 @@ export const INITIAL_ATTENDANCE: Attendance[] = [
 ];
 
 export const INITIAL_WORK_LOGS: WorkLog[] = [];
+
+// --- E-Commerce Initial Data ---
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'p1',
+    name: 'Nepali Pashmina Shawl',
+    sku: 'SHAWL-001',
+    category: 'Apparel',
+    price: 3500,
+    stock: 50,
+    description: 'Authentic hand-woven pashmina shawl from the Himalayas.',
+    image: 'https://images.unsplash.com/photo-1606166547639-656910793df6?auto=format&fit=crop&q=80&w=400',
+    isTaxable: true,
+    status: 'ACTIVE'
+  },
+  {
+    id: 'p2',
+    name: 'Organic Himalayan Tea',
+    sku: 'TEA-ORG-01',
+    category: 'Food & Beverage',
+    price: 800,
+    stock: 200,
+    description: 'Premium orthodox black tea grown at 7000ft.',
+    image: 'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&q=80&w=400',
+    isTaxable: false, // Tea often non-taxable
+    status: 'ACTIVE'
+  },
+  {
+    id: 'p3',
+    name: 'Handmade Singing Bowl',
+    sku: 'BOWL-05',
+    category: 'Handicraft',
+    price: 5500,
+    stock: 15,
+    description: '7-metal alloy singing bowl for meditation and healing.',
+    image: 'https://images.unsplash.com/photo-1592329347810-258af7228691?auto=format&fit=crop&q=80&w=400',
+    isTaxable: true,
+    status: 'ACTIVE'
+  }
+];
+
+export const INITIAL_WEBSITE_CONFIG: WebsiteConfig = {
+  siteName: 'Himalayan Treasures',
+  primaryColor: '#2563EB', // Blue-600
+  font: 'Inter',
+  sections: [
+    {
+      id: 'sec-hero',
+      type: 'HERO',
+      title: 'Authentic Nepali Products',
+      subtitle: 'Handcrafted with love from the mountains.',
+      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1200',
+      isVisible: true
+    },
+    {
+      id: 'sec-products',
+      type: 'PRODUCT_GRID',
+      title: 'Best Sellers',
+      isVisible: true
+    },
+    {
+      id: 'sec-footer',
+      type: 'FOOTER',
+      isVisible: true
+    }
+  ]
+};

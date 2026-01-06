@@ -55,6 +55,7 @@ export interface InvoiceItem {
   discount: number;
   amount: number;
   isTaxable: boolean;
+  productId?: string; // Linked to inventory
 }
 
 export interface Payment {
@@ -90,6 +91,7 @@ export interface Invoice {
   type: 'TAX_INVOICE' | 'ABBREVIATED_INVOICE';
   fiscalYear: string;
   isPrinted: boolean;
+  source?: 'POS' | 'ONLINE_STORE'; // To track origin
 }
 
 export interface Purchase {
@@ -115,8 +117,6 @@ export interface Purchase {
   fiscalYear: string;
   attachmentUrl?: string;
 }
-
-// --- New Staff Interfaces ---
 
 export interface Staff {
   id: string;
@@ -154,6 +154,41 @@ export interface WorkLog {
   endTime: string;
   status: 'PENDING' | 'APPROVED' | 'REJECTED';
   managerComment?: string;
+}
+
+// --- E-COMMERCE & WEBSITE BUILDER ---
+
+export interface Product {
+  id: string;
+  name: string;
+  sku: string;
+  category: string;
+  price: number;
+  stock: number;
+  description: string;
+  image: string; // URL
+  isTaxable: boolean;
+  status: 'ACTIVE' | 'DRAFT';
+}
+
+export interface WebsiteSection {
+  id: string;
+  type: 'HERO' | 'PRODUCT_GRID' | 'FEATURES' | 'TESTIMONIALS' | 'FOOTER';
+  title?: string;
+  subtitle?: string;
+  image?: string;
+  isVisible: boolean;
+}
+
+export interface WebsiteConfig {
+  siteName: string;
+  primaryColor: string;
+  font: string; // 'Inter', 'Roboto', 'Serif'
+  sections: WebsiteSection[];
+}
+
+export interface CartItem extends Product {
+  quantity: number;
 }
 
 export interface AppSettings {

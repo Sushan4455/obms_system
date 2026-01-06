@@ -9,7 +9,8 @@ import {
   Calculator, 
   Settings,
   PieChart,
-  Briefcase
+  Briefcase,
+  Globe
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -22,6 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) => {
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'sales', label: 'Sales & Invoices', icon: FileText },
     { id: 'purchases', label: 'Purchases', icon: ShoppingCart },
+    { id: 'ecommerce', label: 'Online Store', icon: Globe },
     { id: 'contacts', label: 'Customers & Suppliers', icon: Users },
     { id: 'staff', label: 'Staff & HR', icon: Briefcase },
     { id: 'accounting', label: 'Accounting', icon: BookOpen },
